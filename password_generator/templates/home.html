@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1 class="text-white text-4xl text-center mb-10">Generator</h1>
+<div class="w-full sm:w-3/4 md:w-1/2 mx-auto">
+  <form class="flex flex-col gap-2" action="{% url 'password' %}">
+    <label class="text-white text-lg" for="length">Select the length of your password</label>
+    <select class="rounded focus:ring-2 focus:ring-blue-500" name="length" id="length">
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+      <option value="10">10</option>
+      <option value="11">11</option>
+      <option value="12">12</option>
+      <option value="13">13</option>
+      <option value="14">14</option>
+      <option value="15">15</option>
+    </select>
+
+    <div class="flex flex-wrap gap-4 py-4">
+      <div class="flex items-center justify-start items-center w-full" x-data="{ toggle: '0' }">
+        <label for="uppercase" class="flex items-center cursor-pointer">
+          <!-- toggle -->
+          <div class="relative" ">
+              <!-- input -->
+              <input type="checkbox" id="uppercase" name="uppercase" class="sr-only"
+            @click="toggle === '0' ? toggle = '1' : toggle = '0'">
+            <!-- line -->
+            <div class="block bg-gray-600 w-14 h-8 rounded-full"></div>
+            <!-- dot -->
+            <div class="absolute left-1 top-1 bg-white w-6 h-6 rounded-full transition"
+              :class="[toggle === '1' ? 'translate-x-full bg-blue-400' : 'translate-x-0 border-gray-400']"></div>
+          </div>
+          <!-- label -->
+          <div class="ml-3 text-white font-medium">
+            Uppercase
+          </div>
+        </label>
+      </div>
+      <div class="flex items-center justify-start w-full" x-data="{ toggle: '0' }">
+        <label for="characters" class="flex items-center cursor-pointer">
+          <!-- toggle -->
+          <div class="relative" ">
+              <!-- input -->
+              <input type="checkbox" id="characters" name="characters" class="sr-only"
+            @click="toggle === '0' ? toggle = '1' : toggle = '0'">
+            <!-- line -->
+            <div class="block bg-gray-600 w-14 h-8 rounded-full"></div>
+            <!-- dot -->
+            <div class="absolute left-1 top-1 bg-white w-6 h-6 rounded-full transition"
+              :class="[toggle === '1' ? 'translate-x-full bg-blue-400' : 'translate-x-0 border-gray-400']"></div>
+          </div>
+          <!-- label -->
+          <div class="ml-3 text-white font-medium">
+            Characters
+          </div>
+        </label>
+      </div>
+      <div class="flex items-center justify-start w-full" x-data="{ toggle: '0' }">
+        <label for="numbers" class="flex items-center cursor-pointer">
+          <!-- toggle -->
+          <div class="relative" ">
+              <!-- input -->
+              <input type="checkbox" id="numbers" name="numbers" class="sr-only"
+            @click="toggle === '0' ? toggle = '1' : toggle = '0'">
+            <!-- line -->
+            <div class="block bg-gray-600 w-14 h-8 rounded-full"></div>
+            <!-- dot -->
+            <div class="absolute left-1 top-1 bg-white w-6 h-6 rounded-full transition"
+              :class="[toggle === '1' ? 'translate-x-full bg-blue-400' : 'translate-x-0 border-gray-400']"></div>
+          </div>
+          <!-- label -->
+          <div class="ml-3 text-white font-medium">
+            Numbers
+          </div>
+        </label>
+      </div>
+    </div>
+
+    <button
+      class="w-50 bg-purple-600 text-white py-2 px-6 rounded font-bold tracking-wide text-xl transition duration-250 hover:bg-purple-700"
+      type="submit">Generate!</button>
+  </form>
+</div>
+{% endblock content %}
