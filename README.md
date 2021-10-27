@@ -1,5 +1,5 @@
 # PasswordGenerator
-A password generator web made with django
+A password generator web made with django and tailwindCss framework
 
 # Start the web
 ### Install the requirements
