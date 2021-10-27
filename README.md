@@ -10,6 +10,8 @@ pip install
 ```
 python manage.py runserver
 ```
+### Check out the localhost:8000
 
+![Screenshoot](https://raw.githubusercontent.com/joaquinns/PasswordGenerator/master/passwordGenerator.JPG)
 
 
